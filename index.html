@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    form{
+        width: 400px;
+        border: 1px solid black;
+        padding: 20px;
+        text-align: center;
+    }
+    input[type="number"] {
+        width: 100px;
+        padding: 10px;
+        margin: 5px;
+    }
+    button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    h3 {
+        display: inline-block;
+        margin: 0 10px;
+    }
+</style>
+
+<body>
+    
+    <form >
+        <input type="number" id="num1" required>
+        <h3 id="symbol">+</h3>
+        <input type="number" id="num2" required>
+        =
+        <h3 id="result"></h3>
+
+        <br><br>
+
+        <button type="button" onclick="handleAdd()">+</button>
+        <button type="button" onclick="handleSubtract()">-</button>
+        <button type="button" onclick="handleDivide()">/</button>
+        <button type="button" onclick="handleMultiply()">*</button><br><br>
+        <button type="button" onclick="Submit()">Submit</button>
+        
+
+
+    </form>
+
+    <script type="module" src="./index.js"></script>
+</body>
+</html>
