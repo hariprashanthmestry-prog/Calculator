@@ -15,7 +15,8 @@
         align-items: center;
     }
     form{
-        width: 400px;
+        display: flex;
+        width: 100vw;
         border: 1px solid black;
         padding: 20px;
         text-align: center;
@@ -25,6 +26,12 @@
         padding: 10px;
         margin: 5px;
     }
+    .isequal {
+        font-size: 24px;
+        margin: 0 10px;
+        position: relative;
+        top: 15px;
+    }
     button {
         padding: 10px 20px;
         margin: 5px;
@@ -33,7 +40,9 @@
     #result {
         display: inline-block;
         margin: 0 10px;
-       
+        font-size: 34px;
+        position: relative;
+        top: 9px;
     }
 </style>
 
@@ -43,16 +52,17 @@
         <input type="number" id="num1" required>
         <h3 id="symbol">+</h3>
         <input type="number" id="num2" required>
-        =
+        <div class="isequal">=</div>
+      
         <h3 id="result"></h3>
-
+        
         <br><br>
 
         <button type="button" onclick="handleAdd()">+</button>
         <button type="button" onclick="handleSubtract()">-</button>
         <button type="button" onclick="handleDivide()">/</button>
-        <button type="button" onclick="handleMultiply()">*</button><br><br>
-        
+        <button type="button" onclick="handleMultiply()">*</button><br><br><br>
+        <button type="button" onclick="submitForm()">Submit</button>
 
 
     </form>
