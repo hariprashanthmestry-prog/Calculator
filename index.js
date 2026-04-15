@@ -5,50 +5,66 @@ let result = document.getElementById("result");
 
 import { add, subtract, divide, multiply } from "./maths.js";
 
-function handleAdd() {
+
+function submitForm() {
     let n1 = Number(num1.value);
     let n2 = Number(num2.value);
+    let sym = symbol.textContent;
+    let res;
 
+    switch (sym) {
+        case "+":
+            res = add(n1, n2);
+            break;
+            case "-":
+                res = subtract(n1, n2);
+                break;
+                case "/":
+            res = divide(n1, n2);
+            break;
+        case "*":
+            res = multiply(n1, n2);
+            break;
+        default:
+            result.textContent = "Invalid operator";
+            return;
+        }
+        
+        result.textContent = res;
+    }
+    window.submitForm = submitForm;
+
+
+function colorchange() {
+    result.style.color = "green"; 
+}
+colorchange();
+
+function handleAdd() {    
     symbol.textContent = "+";
-    result.textContent = add(n1, n2);
 }
 
 function handleSubtract() {
-    let n1 = Number(num1.value);
-    let n2 = Number(num2.value);
-
     symbol.textContent = "-";
-    result.textContent = subtract(n1, n2);
 }
 
 function handleDivide() {
-    let n1 = Number(num1.value);
     let n2 = Number(num2.value);
-
+    
     if (n2 === 0) {
         result.textContent = "Cannot divide by 0";
-        return;
+        return result.style.color = "red";
     }
 
     symbol.textContent = "/";
-    result.textContent = divide(n1, n2);
 }
 
 function handleMultiply() {
-    let n1 = Number(num1.value);
-    let n2 = Number(num2.value);
-
     symbol.textContent = "*";
-    result.textContent = multiply(n1, n2);
 }
 
 window.handleAdd = handleAdd;
 window.handleSubtract = handleSubtract;
 window.handleDivide = handleDivide;
 window.handleMultiply = handleMultiply;
-
-function colorchange() {
-    result.style.color = "green"; 
-}
-colorchange();
 
