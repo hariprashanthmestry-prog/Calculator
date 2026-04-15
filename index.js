@@ -46,3 +46,9 @@ window.handleAdd = handleAdd;
 window.handleSubtract = handleSubtract;
 window.handleDivide = handleDivide;
 window.handleMultiply = handleMultiply;
+
+function colorchange() {
+    result.style.color = "green"; 
+}
+colorchange();
+
